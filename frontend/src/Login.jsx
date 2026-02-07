@@ -11,8 +11,10 @@ const Login = ({setUser}) => {
             const res= await axios.post('http://localhost:8888/auth/google',{
                 tokenId: googleData.credential
             })
+            console.log("Login response:", res.data);
 
             setUser(res.data.user);
+            console.log(user)
             
         } catch (error) {
             console.log("Login error:", error);
